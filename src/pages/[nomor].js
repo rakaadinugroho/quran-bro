@@ -4,8 +4,21 @@ import { fetchSurahDetail, fetchSurahList } from "@/utils/api";
 import NavBar from "@/components/NavBar";
 import SurahList from "@/components/app/SurahList";
 import SurahDetail from "@/components/app/SurahDetail";
+import MetaSEO from "@/components/MetaSEO";
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+    const dataUrl = await fetchSurahList();
+
+    const paths = dataUrl.map((surah) => ({
+        params: { nomor: surah.nomor.toString() },
+    }))
+
+    // We'll pre-render only these paths at build time.
+    // { fallback: false } means other routes should 404.
+    return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
     try {
         const surahId = params.nomor || 1;
         const [surahList, surahDetail] = await Promise.all([
@@ -50,7 +63,16 @@ export default function SurahDetailPage({ surahData, surahDetail }) {
 
     return (
         <>
-            <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+            <MetaSEO
+                title={selectedSurah.nama_latin || ""}
+                description={`Baca Surat ${selectedSurah.nama_latin || ""} Online Gratis`}
+                url={"https://quranbro.com"}
+                keywords={`${selectedSurah.nama_latin}, Baca ${selectedSurah.nama_latin}, Arti Surat ${selectedSurah.nama_latin}`}
+            />
+            <NavBar
+                darkMode={darkMode}
+                setDarkMode={setDarkMode}
+            />
             <div className="flex h-screen">
                 <SurahList surahData={surahData} />
                 <SurahDetail surahDetail={selectedSurah} loading={loading} />
