@@ -7,6 +7,7 @@
     <list default="true" id="358ec978-073a-45f2-b2ff-68e715715a3f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_document.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +112,7 @@
       <workItem from="1718252477520" duration="635000" />
       <workItem from="1718883943672" duration="14377000" />
       <workItem from="1719198937179" duration="472000" />
-      <workItem from="1719376269472" duration="575000" />
+      <workItem from="1719376269472" duration="1655000" />
     </task>
     <servers />
   </component>

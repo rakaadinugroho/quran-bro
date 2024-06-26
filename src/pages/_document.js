@@ -3,8 +3,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en" title="Quran Bro" about="Quran Bro">
-        <Head>
-            <title>Quran Bro</title>
+        <Head title="Quran Bro">
             <meta charSet="UTF-8"/>
             <meta name="description" content="Aplikasi Baca Quran Online"/>
             <meta name="keywords" content="Quran, Quran Online, Quran"/>
