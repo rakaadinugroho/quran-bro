@@ -1,4 +1,4 @@
-import Head from "next/Head";
+import Head from "next/head";
 
 export default function MetaSEO ({title, description, keywords = "", url = "https://quranbro.com"}) {
     const constructTitle = `Baca Surat ${title} Online - QuranBro.com`;
