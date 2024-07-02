@@ -50,7 +50,7 @@ export default function SurahDetailPage({ surahData, surahDetail }) {
 
     useEffect(() => {
         const fethSurah = async () => {
-            if (nomor && (!surahDetail || surahDetail.nomor !== nomor)) {
+            if ((nomor && (selectedSurah && nomor !== selectedSurah.nomor.toString()))) {
                 setLoading(true);
                 const data = await fetchSurahDetail(nomor);
                 setSelectedSurah(data);
@@ -59,7 +59,7 @@ export default function SurahDetailPage({ surahData, surahDetail }) {
         };
 
         fethSurah();
-    }, [nomor, surahDetail]);
+    }, [nomor, selectedSurah, surahDetail]);
 
     return (
         <>
