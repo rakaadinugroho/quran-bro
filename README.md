@@ -3,7 +3,7 @@
 Get ready to build your skills step-by-step, culminating in a captivating final project – a Quran application!
 ![](https://raw.githubusercontent.com/rakaadinugroho/PowQuran/main/PowQuran.png)
 
-> Quran Application Will Re-write [this project](https://github.com/powdotkim/PowQuran) with NextJS
+> Quran Application Will Re-write [this project](https://github.com/powdotkim/PowQuran) with NextJS (Deployed Here: https://www.quranbro.xyz)
 
 ### **Fundamentals 0: Unveiling the Web's Inner Workings**
 
@@ -49,3 +49,17 @@ This section explores advanced concepts to optimize your Quran application:
     *   **SEO for your Quran Project:** Learn practical strategies to optimize your Quran application for relevant keywords, making it easier for users to find your creation through search engines.
     *   **Tips & Tricks for SEO Success:** Gain valuable insights and practical tips to enhance your Quran application
 *   **Logging & Monitoring:** let’s check what the user do on our website
+
+
+
+## Meeting Sessions
+Thank you to Muhammadiyah University Sukabumi for organizing this event
+
+| Agenda  | Youtube Link |
+| ------------- |:-------------:|
+| How Web Works?      | https://www.youtube.com/watch?v=b3-tbIyflug&list=PLfnh5qJsAz2Um8fdbtzthnXoqfvmQ74gg&index=1     |
+| HTML,  CSS, Javascript, Service Worker, Web Capabilities & PWA      | https://www.youtube.com/watch?v=yaEAvDMlXgU&list=PLfnh5qJsAz2Um8fdbtzthnXoqfvmQ74gg&index=2     |
+| Modern Web & Web Architecture      | https://www.youtube.com/watch?v=1fENENbkgBk&list=PLfnh5qJsAz2Um8fdbtzthnXoqfvmQ74gg&index=3     |
+| Web Rendering Types: Pros & Cons      | https://www.youtube.com/watch?v=c1Jzs5w0-dI&list=PLfnh5qJsAz2Um8fdbtzthnXoqfvmQ74gg&index=4     |
+| Web Performance: Best Practice Implementation & How To Measure      | https://www.youtube.com/watch?v=ijMeea_Hap8&list=PLfnh5qJsAz2Um8fdbtzthnXoqfvmQ74gg&index=5     |
+| Web Deployment & Monitoring     | https://www.youtube.com/watch?v=7LcpexqAO_U&list=PLfnh5qJsAz2Um8fdbtzthnXoqfvmQ74gg&index=6     |
