@@ -5,12 +5,13 @@ import NavBar from "@/components/NavBar";
 import SurahList from "@/components/app/SurahList";
 import SurahDetail from "@/components/app/SurahDetail";
 import MetaSEO from "@/components/MetaSEO";
+import {getSlug, routesMapper} from "@/utils/routerslug";
 
 export async function getStaticPaths() {
     const dataUrl = await fetchSurahList();
 
     const paths = dataUrl.map((surah) => ({
-        params: { nomor: surah.nomor.toString() },
+        params: { slug: getSlug(surah.nama_latin) },
     }))
 
     // We'll pre-render only these paths at build time.
@@ -20,11 +21,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     try {
-        const surahId = params.nomor || 1;
-        const [surahList, surahDetail] = await Promise.all([
-            fetchSurahList(),
-            fetchSurahDetail(surahId),
-        ]);
+        const slug = params.slug || 'al-fatihah';
+        const surahList = await fetchSurahList();
+        const surahId = routesMapper(surahList, slug);
+        const surahDetail = await fetchSurahDetail(surahId);
 
         return { props: { surahData: surahList, surahDetail: surahDetail } };
     } catch (e) {
@@ -38,7 +38,7 @@ export default function SurahDetailPage({ surahData, surahDetail }) {
     const [darkMode, setDarkMode] = useState(false);
 
     const router = useRouter();
-    const { nomor = 1 } = router.query;
+    const { slug = "" } = router.query;
 
     useEffect(() => {
         if (darkMode) {
@@ -49,25 +49,25 @@ export default function SurahDetailPage({ surahData, surahDetail }) {
     }, [darkMode]);
 
     useEffect(() => {
-        const fethSurah = async () => {
-            if ((nomor && (selectedSurah && nomor !== selectedSurah.nomor.toString()))) {
+        const fetchSurah = async () => {
+            if ((slug && (selectedSurah && slug !== getSlug(selectedSurah.nama_latin)))) {
                 setLoading(true);
-                const data = await fetchSurahDetail(nomor);
+
+                const surahId = routesMapper(surahData, slug);
+                const data = await fetchSurahDetail(surahId);
                 setSelectedSurah(data);
                 setLoading(false);
             }
         };
 
-        fethSurah();
-    }, [nomor, selectedSurah, surahDetail]);
+        fetchSurah();
+    }, [slug, selectedSurah, surahDetail]);
 
     return (
         <>
             <MetaSEO
                 title={selectedSurah.nama_latin || ""}
-                description={`Baca Surat ${selectedSurah.nama_latin || ""} Online Gratis`}
-                url={"https://quranbro.com"}
-                keywords={`${selectedSurah.nama_latin}, Baca ${selectedSurah.nama_latin}, Arti Surat ${selectedSurah.nama_latin}`}
+                url={`https://www.quranbro.xyz/${slug}`}
             />
             <NavBar
                 darkMode={darkMode}

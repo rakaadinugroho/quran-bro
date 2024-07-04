@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRightIcon } from "@/components/Icons";
+import {getSlug} from "@/utils/routerslug";
 
 export default function SurahList({ surahData }) {
     return (
@@ -9,7 +10,7 @@ export default function SurahList({ surahData }) {
                     <Link
                         key={surah.nomor}
                         className="w-full text-left  px-4 py-2 transition-colors"
-                        href={`/${surah.nomor}`}
+                        href={`/${getSlug(surah.nama_latin)}`}
                         target="_self"
                     >
                         <div className="flex justify-between rounded-md hover:bg-white items-center">

@@ -1,7 +1,7 @@
 export async function getServerSideProps() {
     return {
         redirect: {
-            destination: '/1', // will redirect to alfatihah
+            destination: '/al-fatihah', // will redirect to alfatihah
             permanent: false,
         }
     }
